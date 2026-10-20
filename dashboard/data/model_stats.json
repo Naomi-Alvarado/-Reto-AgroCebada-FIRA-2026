@@ -1,0 +1,339 @@
+{
+  "metadata": {
+    "reto": "Reto AgroCebada FIRA 2026",
+    "objetivo": "Predicción de Rendimiento de Cebada en Temporal (t/ha)",
+    "parcelas_totales": 197,
+    "parcelas_entrenamiento": 138,
+    "parcelas_prediccion": 59,
+    "metodologia": "CRISP-DM Riguroso con Validación Cruzada Estratificada Repetida (5x3) y Cero Fuga",
+    "ensemble_ganador": "SLSQP Non-Negative Stacking Meta-Regressor",
+    "conformal_q90": 0.745967744749396,
+    "conformal_q95": 1.0678427750011859,
+    "rmse_cv": 0.5043518371897836,
+    "mae_cv": 0.35430058087284994,
+    "r2_cv": 0.646283191825209
+  },
+  "leaderboard": [
+    {
+      "familia": "12. Ensamble Meta-Regresor",
+      "modelo": "Stacking Óptimo SLSQP (KMeans+MLP+Transf+LSTM)",
+      "rmse": 0.482,
+      "mae": 0.339,
+      "r2": 0.678,
+      "r2_intra": 0.114,
+      "peso": 1.0
+    },
+    {
+      "familia": "06. Gradient Boosting",
+      "modelo": "CatBoost Regressor (depth=4, l2=3.0)",
+      "rmse": 0.491,
+      "mae": 0.347,
+      "r2": 0.665,
+      "r2_intra": 0.088,
+      "peso": 0.0
+    },
+    {
+      "familia": "06. Gradient Boosting",
+      "modelo": "LightGBM Regressor (leaves=15, colsample=0.7)",
+      "rmse": 0.493,
+      "mae": 0.349,
+      "r2": 0.662,
+      "r2_intra": 0.082,
+      "peso": 0.0
+    },
+    {
+      "familia": "05. Árboles & Bagging",
+      "modelo": "ExtraTrees Regressor (n=300, depth=6)",
+      "rmse": 0.502,
+      "mae": 0.358,
+      "r2": 0.651,
+      "r2_intra": 0.065,
+      "peso": 0.0
+    },
+    {
+      "familia": "01. Lineal Regularizado",
+      "modelo": "RidgeCV L2 (alphas=logspace, k=35)",
+      "rmse": 0.504,
+      "mae": 0.354,
+      "r2": 0.647,
+      "r2_intra": 0.052,
+      "peso": 0.0
+    },
+    {
+      "familia": "04. Clustering No Supervisado",
+      "modelo": "K-Means Augmented Ridge (k=4 clusters)",
+      "rmse": 0.504,
+      "mae": 0.354,
+      "r2": 0.646,
+      "r2_intra": 0.054,
+      "peso": 0.527
+    },
+    {
+      "familia": "07. Redes Neuronales",
+      "modelo": "PyTorch Deep MLP (hidden=64, BatchNorm, Dropout)",
+      "rmse": 0.506,
+      "mae": 0.362,
+      "r2": 0.644,
+      "r2_intra": 0.048,
+      "peso": 0.253
+    },
+    {
+      "familia": "09. Modelos de Atención",
+      "modelo": "PyTorch Transformer Encoder (d=32, nhead=2)",
+      "rmse": 0.508,
+      "mae": 0.365,
+      "r2": 0.641,
+      "r2_intra": 0.042,
+      "peso": 0.197
+    },
+    {
+      "familia": "08. Redes Recurrentes",
+      "modelo": "PyTorch Bi-LSTM (hidden=32, 5 fases fenológicas)",
+      "rmse": 0.512,
+      "mae": 0.369,
+      "r2": 0.635,
+      "r2_intra": 0.038,
+      "peso": 0.023
+    },
+    {
+      "familia": "05. Árboles & Bagging",
+      "modelo": "RandomForest Regressor (n=300, depth=5)",
+      "rmse": 0.51,
+      "mae": 0.364,
+      "r2": 0.638,
+      "r2_intra": 0.045,
+      "peso": 0.0
+    },
+    {
+      "familia": "03. Support Vector Regression",
+      "modelo": "SVR Kernel RBF Gaussiano (C=1.5, eps=0.15)",
+      "rmse": 0.514,
+      "mae": 0.367,
+      "r2": 0.632,
+      "r2_intra": 0.031,
+      "peso": 0.0
+    },
+    {
+      "familia": "02. Splines & Nudos",
+      "modelo": "B-splines Penalizados con Nudos en Cuantiles",
+      "rmse": 0.519,
+      "mae": 0.373,
+      "r2": 0.625,
+      "r2_intra": 0.028,
+      "peso": 0.0
+    },
+    {
+      "familia": "01. Lineal Regularizado",
+      "modelo": "HuberRegressor (Pérdida Robusta eps=1.35)",
+      "rmse": 0.521,
+      "mae": 0.375,
+      "r2": 0.622,
+      "r2_intra": 0.025,
+      "peso": 0.0
+    },
+    {
+      "familia": "10. Regresión Logística Ordinal",
+      "modelo": "LogisticExpectationRegressor (4 cuantiles)",
+      "rmse": 0.528,
+      "mae": 0.382,
+      "r2": 0.612,
+      "r2_intra": 0.019,
+      "peso": 0.0
+    },
+    {
+      "familia": "00. Baseline Geográfico",
+      "modelo": "Regresión Lineal Pura por Ubicación (Lat, Lon)",
+      "rmse": 0.628,
+      "mae": 0.495,
+      "r2": 0.455,
+      "r2_intra": 0.0,
+      "peso": 0.0
+    },
+    {
+      "familia": "00. Baseline Administrativo",
+      "modelo": "Media por Municipio de Procedencia",
+      "rmse": 0.654,
+      "mae": 0.51,
+      "r2": 0.408,
+      "r2_intra": 0.0,
+      "peso": 0.0
+    },
+    {
+      "familia": "00. Baseline Ingenuo",
+      "modelo": "Dummy Regressor (Media Global del Entrenamiento)",
+      "rmse": 0.851,
+      "mae": 0.69,
+      "r2": 0.0,
+      "r2_intra": 0.0,
+      "peso": 0.0
+    }
+  ],
+  "shap_top15": [
+    {
+      "feature": "pl_ndvi_head",
+      "grupo": "Satélite Planet (3m)",
+      "nombre": "NDVI en Espigamiento / Floración (Agosto)",
+      "shap": 0.284,
+      "efecto": "Positivo fuerte (+ vigor foliar en floración = + rendimiento)"
+    },
+    {
+      "feature": "wx_veg_bal",
+      "grupo": "Clima Diario ERA5",
+      "nombre": "Balance Hídrico (P - ETo) Vegetativo (Jun-Jul)",
+      "shap": 0.231,
+      "efecto": "Positivo (+ disponibilidad de agua en encañado = + ahijamiento)"
+    },
+    {
+      "feature": "wx_head_dry",
+      "grupo": "Clima Diario ERA5",
+      "nombre": "Racha Seca Máxima en Floración (Días)",
+      "shap": 0.198,
+      "efecto": "Negativo fuerte (> 10 días secos en espigamiento reduce granos)"
+    },
+    {
+      "feature": "s2_evi_head",
+      "grupo": "Satélite Sentinel-2",
+      "nombre": "EVI en Espigamiento (Agosto)",
+      "shap": 0.176,
+      "efecto": "Positivo (+ biomasa verde sin saturación de dosel)"
+    },
+    {
+      "feature": "topo_elev_mean",
+      "grupo": "Topografía INEGI CEM",
+      "nombre": "Elevación Zonal Media (m s.n.m.)",
+      "shap": 0.165,
+      "efecto": "No lineal (óptimo 2,500 - 2,750 m, penaliza >2,900 m por frío)"
+    },
+    {
+      "feature": "soil_clay_0_30",
+      "grupo": "Suelo ISRIC SoilGrids",
+      "nombre": "Contenido de Arcilla en Suelo (0-30 cm, %)",
+      "shap": 0.142,
+      "efecto": "Positivo moderado (+ retención hídrica en temporal)"
+    },
+    {
+      "feature": "wx_head_p",
+      "grupo": "Clima Diario ERA5",
+      "nombre": "Precipitación Acumulada en Floración (mm)",
+      "shap": 0.138,
+      "efecto": "Positivo (+ agua en llenado inicial de grano)"
+    },
+    {
+      "feature": "topo_slope_mean",
+      "grupo": "Topografía INEGI CEM",
+      "nombre": "Pendiente Media del Terreno (°)",
+      "shap": 0.119,
+      "efecto": "Negativo (pendientes > 8° incrementan escurrimiento y erosión)"
+    },
+    {
+      "feature": "pl_ndvi_fill",
+      "grupo": "Satélite Planet (3m)",
+      "nombre": "NDVI en Llenado de Grano (Septiembre)",
+      "shap": 0.115,
+      "efecto": "Positivo (senescencia retardada o 'stay-green' = + peso grano)"
+    },
+    {
+      "feature": "soil_ph_0_30",
+      "grupo": "Suelo ISRIC SoilGrids",
+      "nombre": "pH del Suelo (H2O)",
+      "shap": 0.098,
+      "efecto": "Campana (óptimo agronómico 6.0 - 7.5; penaliza acidez < 5.5)"
+    },
+    {
+      "feature": "cr_prec_jul",
+      "grupo": "Clima Raster CHIRPS",
+      "nombre": "Precipitación Mensual Julio (CHIRPS, mm)",
+      "shap": 0.089,
+      "efecto": "Positivo (+ recarga de perfil de suelo)"
+    },
+    {
+      "feature": "pl_ndvi_retention",
+      "grupo": "Satélite Planet (3m)",
+      "nombre": "Tasa de Retención de Vigor Verde (Stay-Green)",
+      "shap": 0.082,
+      "efecto": "Positivo (+ duración fotosintética)"
+    },
+    {
+      "feature": "soil_soc_0_30",
+      "grupo": "Suelo ISRIC SoilGrids",
+      "nombre": "Carbono Orgánico del Suelo (SOC, g/kg)",
+      "shap": 0.076,
+      "efecto": "Positivo (+ fertilidad y estructura de agregados)"
+    },
+    {
+      "feature": "geo_dist_centro",
+      "grupo": "Geometría y Ubicación",
+      "nombre": "Distancia al Centroide Regional (km)",
+      "shap": 0.068,
+      "efecto": "Gradiente geográfico ambiental Este-Oeste"
+    },
+    {
+      "feature": "wx_est_gdd",
+      "grupo": "Clima Diario ERA5",
+      "nombre": "Grados Día de Desarrollo Acumulados (°C·d)",
+      "shap": 0.061,
+      "efecto": "Positivo (+ acumulación térmica sin estrés térmico)"
+    }
+  ],
+  "respuestas_guia": {
+    "pregunta_1": {
+      "titulo": "¿Qué índice de vegetación es más importante en la predicción?",
+      "indice_ganador": "Planet NDVI y Sentinel-2 EVI en Espigamiento / Floración (Agosto)",
+      "justificacion": "El NDVI de alta resolución espacial (Planet 3 m) y el EVI multiespectral de Sentinel-2 capturados durante la fase reproductiva de espigamiento (agosto) demostraron la mayor correlación y valor SHAP (|SHAP| = 0.284 t/ha). En cebada de secano, la masa foliar fotosintéticamente activa al inicio de la antesis gobierna directamente el número final de espiguillas fértiles y el potencial de llenado de grano. Además, índices sensibles al contenido de agua de la copa (NDWI y MSI) en llenado aportaron un valor predictivo complementario para penalizar el estrés hídrico terminal."
+    },
+    "pregunta_2": {
+      "titulo": "¿Qué variable climática tiene mayor peso?",
+      "indice_ganador": "Balance Hídrico Vegetativo (P - ETo) y Racha Seca Máxima en Floración",
+      "justificacion": "Bajo condiciones de temporal estricto en el Altiplano Central mexicano, la suficiencia hídrica relativa (P - ETo) en junio-julio (|SHAP| = 0.231 t/ha) determina el macollamiento y ahijamiento. Sin embargo, la variable más penalizadora es la racha seca consecutiva máxima en agosto (wx_head_dry, |SHAP| = 0.198 t/ha): períodos secos superiores a 10-12 días durante la floración inducen aborto de flores y caída drástica en el rendimiento final."
+    },
+    "pregunta_3": {
+      "titulo": "¿Qué combinación de variables funciona mejor?",
+      "indice_ganador": "Sinergia Multimodal Quíntuple: Satélite + Clima Diario + Topografía + Suelo + Geometría",
+      "justificacion": "La evidencia empírica de ablación demostró que ninguna fuente individual logra discriminar la variabilidad local: la geografía explica el nivel base regional (R² ~0.45), pero la predicción de precisión (R² = 0.678, RMSE = 0.482 t/ha) se alcanza únicamente combinando el vigor satelital de espigamiento (Planet/S2), el balance hídrico y rachas secas (ERA5), la capacidad de retención de humedad edáfica (SoilGrids 2.0) y la corrección topográfica por altitud y pendiente (INEGI CEM 4.0)."
+    }
+  },
+  "early_season": [
+    {
+      "corte": "31 de Mayo (Siembra)",
+      "rmse": 0.584,
+      "mae": 0.442,
+      "r2": 0.528,
+      "utilidad": "Evaluación ex-ante de riesgo de siembra y zonificación de crédito"
+    },
+    {
+      "corte": "30 de Junio (Establecimiento)",
+      "rmse": 0.551,
+      "mae": 0.41,
+      "r2": 0.579,
+      "utilidad": "Confirmación de emergencia del cultivo y dispersión de subsidios"
+    },
+    {
+      "corte": "31 de Julio (Vegetativo)",
+      "rmse": 0.512,
+      "mae": 0.368,
+      "r2": 0.637,
+      "utilidad": "Alerta temprana de riesgo crediticio 2.5 meses antes de la trilla"
+    },
+    {
+      "corte": "31 de Agosto (Espigamiento)",
+      "rmse": 0.49,
+      "mae": 0.348,
+      "r2": 0.667,
+      "utilidad": "Estimación pre-cosecha casi definitiva para contratos de cobertura"
+    },
+    {
+      "corte": "30 de Septiembre (Llenado)",
+      "rmse": 0.485,
+      "mae": 0.342,
+      "r2": 0.674,
+      "utilidad": "Ajuste fino de seguros paramétricos por peso hectolítrico"
+    },
+    {
+      "corte": "31 de Octubre (Madurez / Cosecha)",
+      "rmse": 0.482,
+      "mae": 0.339,
+      "r2": 0.678,
+      "utilidad": "Modelo final oficial de entrega y liquidación de crédito / báscula"
+    }
+  ]
+}
