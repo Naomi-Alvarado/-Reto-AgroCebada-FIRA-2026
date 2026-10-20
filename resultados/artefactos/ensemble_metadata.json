@@ -1,0 +1,77 @@
+{
+  "models": [
+    "00_Baseline_Municipio",
+    "01_Residual_Ridge_Optuna",
+    "02_Residual_SVR_Optuna"
+  ],
+  "weights": [
+    0.14500261277651694,
+    0.8549973872234831,
+    0.0
+  ],
+  "optuna_params": {
+    "ridge": {
+      "alpha": 2997.6597239316,
+      "k_sat": 23
+    },
+    "svr": {
+      "C": 0.05658845681459786,
+      "epsilon": 0.011668511436635578,
+      "k_sat": 18
+    }
+  },
+  "features_residual_ridge": [
+    "s2_ndvi_pre",
+    "s2_fapar_min",
+    "s2_evistd_min",
+    "wx_pre_dry",
+    "s2_ndvistd_pre",
+    "s2_fapar_tpeak",
+    "s2_ndvistd_min",
+    "s2_mra_pre",
+    "s2_fapar_pre",
+    "s2_lai_pre",
+    "s2_savi_pre",
+    "s2_ndwi_tpeak",
+    "s2_evi_pre",
+    "pl_ndvi_pre",
+    "pl_lai_pre",
+    "s2_mra_min",
+    "s2_crc_pre",
+    "wx_head_rad",
+    "s2_ndvi_min",
+    "wx_mat_cold2",
+    "wx_season_cold2",
+    "pl_ndvi_min",
+    "s2_evistd_pre"
+  ],
+  "features_residual_svr": [
+    "s2_ndvi_pre",
+    "s2_fapar_min",
+    "s2_evistd_min",
+    "wx_pre_dry",
+    "s2_ndvistd_pre",
+    "s2_fapar_tpeak",
+    "s2_ndvistd_min",
+    "s2_mra_pre",
+    "s2_fapar_pre",
+    "s2_lai_pre",
+    "s2_savi_pre",
+    "s2_ndwi_tpeak",
+    "s2_evi_pre",
+    "pl_ndvi_pre",
+    "pl_lai_pre",
+    "s2_mra_min",
+    "s2_crc_pre",
+    "wx_head_rad"
+  ],
+  "q_90": 0.7324782847772113,
+  "q_95": 1.0308094028690176,
+  "metrics_cv": {
+    "RMSE": 0.5030441842897857,
+    "MSE": 0.2530534513477759,
+    "MAE": 0.33402194552220615,
+    "R2": 0.6481438947042979,
+    "R2_intra_muni": -0.05052986644463742
+  }
+}
