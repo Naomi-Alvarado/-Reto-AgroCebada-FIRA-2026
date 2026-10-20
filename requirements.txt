@@ -1,0 +1,37 @@
+# ==============================================================================
+# Reto AgroCebada FIRA 2026 — Requerimientos de Software y Reproducibilidad
+# ==============================================================================
+# Python recomendado: >=3.10, <3.13
+
+# Computación Científica, Álgebra Lineal y Análisis de Datos
+numpy>=1.24.0,<=2.4.6
+pandas>=2.0.0,<=2.2.3
+scipy>=1.11.0,<=1.17.1
+
+# Machine Learning, Modelado y Optimización Bayesiana
+scikit-learn>=1.3.0,<=1.8.0
+optuna>=3.6.0,<=4.8.0
+joblib>=1.3.0,<=1.5.3
+
+# Interpretabilidad y Explicabilidad Agronómica (SHAP)
+shap>=0.44.0,<=0.51.0
+
+# Procesamiento Geoespacial, Vectorial y Raster (DEM, Satélite, CHIRPS)
+geopandas>=0.14.0,<=1.1.1
+shapely>=2.0.0,<=2.1.2
+rasterio>=1.3.0,<=1.5.2
+
+# Visualización Gráfica y Diagnóstico Estadístico
+matplotlib>=3.8.0,<=3.10.8
+seaborn>=0.13.0,<=0.13.2
+
+# Descarga de Datos Externos Reales (ERA5 / Open-Meteo, SoilGrids)
+requests>=2.31.0,<=2.32.4
+
+# Dashboard Interactivo y Aplicación Web
+streamlit>=1.30.0,<=1.52.2
+Flask>=2.3.0,<=3.1.0
+
+# Entorno de Ejecución Interactivo
+ipykernel>=6.25.0
+jupyter>=1.0.0
