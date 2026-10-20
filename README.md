@@ -1,6 +1,9 @@
 # 🌾 AgroCebada Intelligence | Reto AgroCebada FIRA 2026
-[NUESTRO VIDEO ESTA EN](https://youtu.be/vEQwPb0-XDo)
-[NUESTRO DASHBOARD ESTA EN ](https://naomi-alvarado.github.io/-Reto-AgroCebada-FIRA-2026/)
+[NUESTRO VIDEO ESTA EN (click aquí)](https://youtu.be/vEQwPb0-XDo)
+
+[NUESTRO DASHBOARD ESTA EN (click aquí)](https://naomi-alvarado.github.io/-Reto-AgroCebada-FIRA-2026/)
+
+
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Equipo UPIIT Machine](https://img.shields.io/badge/Equipo-UPIIT_Machine-EC4899?logo=starship&logoColor=white)](#)
 [![Metodología CRISP-DM](https://img.shields.io/badge/Metodolog%C3%ADa-CRISP--DM-009688?logo=buffer&logoColor=white)](#)
